@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		020EF841C71A6397A6D655DA /* Pods_weatherTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3807A163A08C7E36F0402E8 /* Pods_weatherTestTests.framework */; };
+		05C3F16522F9027B00E78A1A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3F16422F9027B00E78A1A /* LocationManager.swift */; };
+		05C3F16622F9027B00E78A1A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3F16422F9027B00E78A1A /* LocationManager.swift */; };
+		05C3F16922F902C300E78A1A /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3F16822F902C300E78A1A /* PermissionManager.swift */; };
+		05C3F16A22F902C300E78A1A /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3F16822F902C300E78A1A /* PermissionManager.swift */; };
+		05C3F16B22F9030C00E78A1A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D431CE22F8F42D00A58E36 /* Constants.swift */; };
 		05D431A522F8F14300A58E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D431A422F8F14300A58E36 /* AppDelegate.swift */; };
 		05D431A722F8F14300A58E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D431A622F8F14300A58E36 /* ViewController.swift */; };
 		05D431AA22F8F14300A58E36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D431A822F8F14300A58E36 /* Main.storyboard */; };
@@ -29,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05C3F16422F9027B00E78A1A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		05C3F16822F902C300E78A1A /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		05D431A122F8F14300A58E36 /* weatherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D431A422F8F14300A58E36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05D431A622F8F14300A58E36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +75,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05C3F16022F9023F00E78A1A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				05C3F16322F9026C00E78A1A /* Location */,
+				05C3F16722F902A800E78A1A /* Permision */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		05C3F16322F9026C00E78A1A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				05C3F16422F9027B00E78A1A /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		05C3F16722F902A800E78A1A /* Permision */ = {
+			isa = PBXGroup;
+			children = (
+				05C3F16822F902C300E78A1A /* PermissionManager.swift */,
+			);
+			path = Permision;
+			sourceTree = "<group>";
+		};
 		05D4319822F8F14300A58E36 = {
 			isa = PBXGroup;
 			children = (
@@ -92,8 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				05D431C722F8F3D700A58E36 /* Core */,
-				05D431C622F8F3D000A58E36 /* UI */,
-				05D431C522F8F29300A58E36 /* Utilities */,
 				05D431C422F8F28500A58E36 /* Resources */,
 				05D431A422F8F14300A58E36 /* AppDelegate.swift */,
 				05D431A622F8F14300A58E36 /* ViewController.swift */,
@@ -120,38 +150,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		05D431C522F8F29300A58E36 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				05D431C822F8F3E600A58E36 /* Extensions */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		05D431C622F8F3D000A58E36 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		05D431C722F8F3D700A58E36 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				05D431CD22F8F41A00A58E36 /* API */,
-				05D431CC22F8F41400A58E36 /* Database */,
-				05D431CB22F8F40D00A58E36 /* Manager */,
-				05D431CA22F8F40600A58E36 /* Model */,
+				05C3F16022F9023F00E78A1A /* Manager */,
 				05D431C922F8F3FE00A58E36 /* Config */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		05D431C822F8F3E600A58E36 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		05D431C922F8F3FE00A58E36 /* Config */ = {
@@ -161,27 +167,6 @@
 				05D431CE22F8F42D00A58E36 /* Constants.swift */,
 			);
 			path = Config;
-			sourceTree = "<group>";
-		};
-		05D431CA22F8F40600A58E36 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		05D431CB22F8F40D00A58E36 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		05D431CC22F8F41400A58E36 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Database;
 			sourceTree = "<group>";
 		};
 		05D431CD22F8F41A00A58E36 /* API */ = {
@@ -199,7 +184,6 @@
 				A4C29473F45B18528CD6C03B /* Pods-weatherTestTests.debug.xcconfig */,
 				EB60FA08C022C547F478CB14 /* Pods-weatherTestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -362,6 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C3F16522F9027B00E78A1A /* LocationManager.swift in Sources */,
+				05C3F16922F902C300E78A1A /* PermissionManager.swift in Sources */,
 				05D431A722F8F14300A58E36 /* ViewController.swift in Sources */,
 				05D431A522F8F14300A58E36 /* AppDelegate.swift in Sources */,
 				05D431CF22F8F42D00A58E36 /* Constants.swift in Sources */,
@@ -372,7 +358,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C3F16622F9027B00E78A1A /* LocationManager.swift in Sources */,
 				05D431BA22F8F14600A58E36 /* weatherTestTests.swift in Sources */,
+				05C3F16A22F902C300E78A1A /* PermissionManager.swift in Sources */,
+				05C3F16B22F9030C00E78A1A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
