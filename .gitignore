@@ -5,3 +5,4 @@ DerivedData/
 # User data
 *.pbxuser
 xcuserdata/
+*xcworkspace/xcuserdata/*
