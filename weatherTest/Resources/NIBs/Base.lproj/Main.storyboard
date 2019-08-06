@@ -45,6 +45,7 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FaU-iE-jLl">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="OoW-dq-66M">
                                                 <rect key="frame" x="171.66666666666666" y="210.33333333333334" width="71" height="51.000000000000028"/>
@@ -186,17 +187,13 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="c5H-8J-ZeI" secondAttribute="trailing" id="2GZ-Dk-Xyx"/>
-                                            <constraint firstItem="FaU-iE-jLl" firstAttribute="leading" secondItem="LeP-y9-Wss" secondAttribute="leading" id="3LN-Gu-hhW"/>
                                             <constraint firstItem="OoW-dq-66M" firstAttribute="top" secondItem="cMY-IW-oqu" secondAttribute="bottom" constant="10" id="7Le-Gh-hbs"/>
                                             <constraint firstItem="c5H-8J-ZeI" firstAttribute="top" secondItem="JW0-I4-p5F" secondAttribute="bottom" constant="30" id="CJM-zw-X9z"/>
                                             <constraint firstItem="OoW-dq-66M" firstAttribute="centerX" secondItem="LeP-y9-Wss" secondAttribute="centerX" id="GAh-cy-Rxl"/>
                                             <constraint firstItem="OoW-dq-66M" firstAttribute="centerY" secondItem="LeP-y9-Wss" secondAttribute="centerY" constant="15" id="NCB-Hh-wrT"/>
                                             <constraint firstItem="cMY-IW-oqu" firstAttribute="centerX" secondItem="LeP-y9-Wss" secondAttribute="centerX" id="VWa-xY-Uqz"/>
                                             <constraint firstItem="JW0-I4-p5F" firstAttribute="centerX" secondItem="OoW-dq-66M" secondAttribute="centerX" id="Ye1-Yo-iUy"/>
-                                            <constraint firstItem="FaU-iE-jLl" firstAttribute="top" secondItem="LeP-y9-Wss" secondAttribute="top" id="Zry-mJ-3sW"/>
                                             <constraint firstItem="c5H-8J-ZeI" firstAttribute="leading" secondItem="LeP-y9-Wss" secondAttribute="leading" id="huX-lF-ywd"/>
-                                            <constraint firstAttribute="bottom" secondItem="FaU-iE-jLl" secondAttribute="bottom" id="jtw-3V-yvq"/>
-                                            <constraint firstAttribute="trailing" secondItem="FaU-iE-jLl" secondAttribute="trailing" id="lmW-9c-2Yt"/>
                                             <constraint firstItem="JW0-I4-p5F" firstAttribute="top" secondItem="OoW-dq-66M" secondAttribute="bottom" constant="7" id="rYP-64-2cZ"/>
                                         </constraints>
                                         <variation key="default">
@@ -221,7 +218,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TBm-mz-y8L">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherItemCollectionView" id="TBm-mz-y8L">
                                                 <rect key="frame" x="0.0" y="4.666666666666667" width="112" height="285"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -237,7 +234,6 @@
                                     </collectionView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Pwj-VP-4L3" firstAttribute="centerX" secondItem="xoK-6o-UxM" secondAttribute="centerX" id="3oP-Mz-h3P"/>
                                     <constraint firstItem="bFl-Ft-R7d" firstAttribute="leading" secondItem="xoK-6o-UxM" secondAttribute="leading" id="62h-uW-RuY"/>
                                     <constraint firstItem="LeP-y9-Wss" firstAttribute="top" secondItem="xoK-6o-UxM" secondAttribute="top" id="7Qs-Dt-L2f"/>
                                     <constraint firstAttribute="trailing" secondItem="bFl-Ft-R7d" secondAttribute="trailing" id="8xG-aw-VQU"/>
