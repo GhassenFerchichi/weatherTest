@@ -101,9 +101,7 @@ class TodayViewController: UIViewController {
             result in
             MBProgressHUD.hide(for: self.view, animated: true)
             switch result {
-            case .error(let errorMessage):
-                Log.error(errorMessage)
-                self.showError(errorMessage)
+            case .error:
                 self.setNowPrevision(nil)
                 self.previsions = []
                 break
@@ -115,6 +113,8 @@ class TodayViewController: UIViewController {
             case .placeName(let name):
                 self.searchTextField?.text = name
                 self.searchTextField?.resignFirstResponder()
+            case .unAuthorized:
+                self.showUserLocationAuthorizationError()
             }
         }
     }
@@ -144,6 +144,29 @@ class TodayViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.navigationController?.present(alert, animated: true, completion: nil)
     }
+    
+    private func showUserLocationAuthorizationError() {
+        let alert = UIAlertController (title: "", message: "Activate ", preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+            
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    print("Settings opened: \(success)") // Prints true
+                })
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+
+        alert.addAction(settingsAction)
+        alert.addAction(cancelAction)
+
+        self.navigationController?.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: UICollectionView DataSource / Delegate
