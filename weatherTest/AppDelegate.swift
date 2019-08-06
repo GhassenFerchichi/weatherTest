@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Location manager
         _ = LocationManager.instance
         
+        // Set up keyboard
+        self.setupKeyboard()
 
         return true
     }
@@ -53,6 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private static func migrateFromV0toV1() {
         //TODO - Finish realm migration method
     }
-
+    
+    //MARK: IQKeyboardManager
+    
+    private func setupKeyboard() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+    }
 }
 

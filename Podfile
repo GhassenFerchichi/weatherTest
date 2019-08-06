@@ -11,6 +11,12 @@ target 'weatherTest' do
   
   # Database library
   pod 'RealmSwift'
+  
+  # Keyboard
+  pod 'IQKeyboardManagerSwift'
+  
+  # Progress HUD
+  pod 'MBProgressHUD', '~> 1.1.0'
 
   target 'weatherTestTests' do
     inherit! :search_paths
