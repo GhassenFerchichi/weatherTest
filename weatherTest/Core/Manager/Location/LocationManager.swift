@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 public class LocationManager: NSObject, CLLocationManagerDelegate {
-   
+    
     // MARK: Variables
     
     public static let instance = LocationManager()
@@ -41,6 +41,12 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     
     //MARK: Location management
     
+    /// This function returns current user location coordinates
+    ///
+    /// - Warning: The returned location can be nil.
+    ///
+    /// - Returns: Current user location coordinates.
+    
     public func requestCurrentLocation(completion: ((CLLocationCoordinate2D?) -> (Void))?) {
         guard locationCompletion == nil else {
             completion?(nil)
@@ -57,8 +63,13 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    
     //MARK: Geocoder
+    
+    /// This function returns location infomration for a passed coordinates
+    ///
+    /// - Parameter Coordinates: Location coordinates.
+    ///
+    /// - Returns: Location information.
     
     public func getLocationInformations(coordinates: CLLocationCoordinate2D, completion: @escaping ((CLPlacemark?) -> (Void))) {
         let location = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
@@ -67,6 +78,14 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
             completion(places?.first)
         }
     }
+    
+    /// This function returns city location coordinates
+    ///
+    /// - Warning: The returned location can be nil.
+    ///
+    /// - Parameter Name: City name.
+    ///
+    /// - Returns: City location coordinates.
     
     public func getLocation(forPlaceCalled name: String, completion: @escaping(CLLocationCoordinate2D?) -> Void) {
         let geocoder = CLGeocoder()
@@ -98,7 +117,8 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     
     //MARK: Authorization
     
-    public func askForLocationLocationAuthorization() {
+    /// Request location authorization
+    public func askForLocationAuthorization() {
         DispatchQueue.main.async {
             self.manager.requestWhenInUseAuthorization()
         }
@@ -125,10 +145,20 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     
     //MARK: Location manager user defaults
     
+    /// This function saves user location in user defaults
+    ///
+    /// - Parameter Coordinates: User location.
+    
     func saveUserLocation(_ coordinates: CLLocationCoordinate2D) {
         UserDefaults.standard.set(coordinates.latitude, forKey: kSavedLocationLatitude)
         UserDefaults.standard.set(coordinates.longitude, forKey: kSavedLocationLongitude)
     }
+    
+    /// This function returns user location from user defaults
+    ///
+    /// - Warning: The returned location can be nil.
+    ///
+    /// - Returns: User location coordinates.
     
     func getSavedLocation() -> CLLocationCoordinate2D? {
         let longitude = UserDefaults.standard.double(forKey: kSavedLocationLongitude)

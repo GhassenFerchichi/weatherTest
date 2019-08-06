@@ -71,10 +71,14 @@ public class PermissionManager: NSObject {
         }
     }
     
+    /// This function asks for location usage authorization
+    
     private func askForLocationAuthorization(completion: @escaping AuthorizationResponse) {
         locationCompletion = completion
-        LocationManager.instance.askForLocationLocationAuthorization()
+        LocationManager.instance.askForLocationAuthorization()
     }
+    
+    /// This function gets called when authorization status has changed
     
     public func onLocationAuthorizationStatusChanged(status: CLAuthorizationStatus) {
         guard status != .notDetermined else {
