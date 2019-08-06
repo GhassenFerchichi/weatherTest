@@ -12,10 +12,11 @@ import CoreLocation
 class TodayViewModel: NSObject {
     
     enum ResultState {
-        case error(String)
+        case error
         case previsions(current: Prevision, todayPrevisions: [Prevision])
         case loading
         case placeName(String)
+        case unAuthorized
     }
     
     // MARK: Variables
@@ -25,13 +26,17 @@ class TodayViewModel: NSObject {
     // MARK: Life cycle methods
 
     func onViewAppeared() {
-        if LocationManager.instance.currentLocation != nil {
+        if let currentLocation = LocationManager.instance.currentLocation {
+            loadPrevisionWithLocation(currentLocation)
             return
         }
+        
         if let coordinates = LocationManager.instance.getSavedLocation() {
             loadPrevisionWithLocation(coordinates)
         } else if !LocationManager.instance.didAskForUserLocation {
             getUserLocation()
+        } else {
+            self.publishResult?(.error)
         }
     }
 
@@ -52,7 +57,7 @@ class TodayViewModel: NSObject {
         PrevisionManager.instance.previsionsForDay(location: coordinates, day: Date().toDayString(), completion: { [weak self] (previsionsArray, error) in
             guard var previsionsArray = previsionsArray, error == nil else {
                 // Push error message
-                self?.publishResult?(.error(NSLocalizedString("Could not get Weather previsions.\nPlease try again later", comment: "")))
+                self?.publishResult?(.error)
                 return
             }
             if let prevision = self?.managePrevisions(previsionsArray) {
@@ -66,7 +71,7 @@ class TodayViewModel: NSObject {
                 self?.getNamePlaceForLocation(coordinates)
             } else {
                 // Push error message
-                self?.publishResult?(.error(NSLocalizedString("Could not get Weather previsions.\nPlease try again later", comment: "")))
+                self?.publishResult?(.error)
             }
         })
     }
@@ -110,7 +115,11 @@ class TodayViewModel: NSObject {
                     LocationManager.instance.saveUserLocation(coordinates)
                     self?.loadPrevisionWithLocation(coordinates)
                 } else {
-                    self?.publishResult?(.error(NSLocalizedString("Unable to get location.", comment: "")))
+                    if !LocationManager.instance.didAskForUserLocation {
+                        self?.publishResult?(.error)
+                    } else {
+                        self?.publishResult?(.unAuthorized)
+                    }
                 }
             }
         }
@@ -145,7 +154,7 @@ class TodayViewModel: NSObject {
             if let longitude = coordinates?.longitude, let latitude = coordinates?.latitude {
                 self?.loadPrevisionWithLocation(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
             } else {
-                self?.publishResult?(.error(NSLocalizedString("Unable to get address location.", comment: "")))
+                self?.publishResult?(.error)
             }
         }
     }

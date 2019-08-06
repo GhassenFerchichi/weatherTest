@@ -27,3 +27,7 @@ let kWeatherCollectionViewNibName = "WeatherItemCollectionViewCell"
 let kWeatherCollectionViewCellIdentifier = "WeatherItemCollectionViewCell"
 let kWeatherCollectionViewWidth = 150
 let kWeatherCollectionViewHeight = 300
+
+// MARK: Week list view
+
+let kWeekTableViewCellIdentifier = "WeekTableViewCellIdentifier"
