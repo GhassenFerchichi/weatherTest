@@ -138,6 +138,7 @@ class TodayViewModel: NSObject {
         LocationManager.instance.getLocationInformations(coordinates: location) { [weak self] place -> (Void) in
             if let city = place?.locality {
                 UserDefaults.standard.set(city, forKey: kCityName)
+                self?.publishResult?(.placeName(city))
             } else {
                 let city = UserDefaults.standard.string(forKey: kCityName) ?? ""
                 self?.publishResult?(.placeName(city))                

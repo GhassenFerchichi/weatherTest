@@ -33,7 +33,7 @@ class WeatherItemCollectionViewCell: UICollectionViewCell {
         case .sunny:
             weatherImageView.image = #imageLiteral(resourceName: "sun")
         case .rainy:
-            weatherImageView.image = #imageLiteral(resourceName: "cloud")
+            weatherImageView.image = #imageLiteral(resourceName: "rain")
         }
     }
 }
