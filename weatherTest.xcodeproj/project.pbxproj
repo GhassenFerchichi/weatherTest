@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,20 @@
 		05D431AF22F8F14600A58E36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D431AD22F8F14600A58E36 /* LaunchScreen.storyboard */; };
 		05D431BA22F8F14600A58E36 /* weatherTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D431B922F8F14600A58E36 /* weatherTestTests.swift */; };
 		05D431CF22F8F42D00A58E36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D431CE22F8F42D00A58E36 /* Constants.swift */; };
+		05F3328C22F90C4E00665B5E /* AppDatabaseConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3328B22F90C4E00665B5E /* AppDatabaseConfiguration.swift */; };
+		05F3328D22F90C4E00665B5E /* AppDatabaseConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3328B22F90C4E00665B5E /* AppDatabaseConfiguration.swift */; };
+		05F3328F22F90C6E00665B5E /* AppDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3328E22F90C6E00665B5E /* AppDatabaseOperation.swift */; };
+		05F3329022F90C6E00665B5E /* AppDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3328E22F90C6E00665B5E /* AppDatabaseOperation.swift */; };
+		05F3329222F90C8100665B5E /* RealmOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3329122F90C8100665B5E /* RealmOperations.swift */; };
+		05F3329322F90C8100665B5E /* RealmOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3329122F90C8100665B5E /* RealmOperations.swift */; };
+		05F3329622F90CAD00665B5E /* AppDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3329522F90CAD00665B5E /* AppDataManager.swift */; };
+		05F3329722F90CAD00665B5E /* AppDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3329522F90CAD00665B5E /* AppDataManager.swift */; };
+		05F3329C22F90D7600665B5E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3329B22F90D7600665B5E /* Log.swift */; };
+		05F3329D22F90D7600665B5E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3329B22F90D7600665B5E /* Log.swift */; };
+		05F3329F22F90DBF00665B5E /* AppDatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3329E22F90DBF00665B5E /* AppDatabaseProvider.swift */; };
+		05F332A022F90DBF00665B5E /* AppDatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3329E22F90DBF00665B5E /* AppDatabaseProvider.swift */; };
+		05F332A522F90E0000665B5E /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F332A422F90E0000665B5E /* AppModel.swift */; };
+		05F332A622F90E0000665B5E /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F332A422F90E0000665B5E /* AppModel.swift */; };
 		32E1902F8F8CCD38B4897C67 /* Pods_weatherTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45AECD3219AC5C0BBE6AAA98 /* Pods_weatherTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +61,13 @@
 		05D431B922F8F14600A58E36 /* weatherTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherTestTests.swift; sourceTree = "<group>"; };
 		05D431BB22F8F14600A58E36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05D431CE22F8F42D00A58E36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		05F3328B22F90C4E00665B5E /* AppDatabaseConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabaseConfiguration.swift; sourceTree = "<group>"; };
+		05F3328E22F90C6E00665B5E /* AppDatabaseOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabaseOperation.swift; sourceTree = "<group>"; };
+		05F3329122F90C8100665B5E /* RealmOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmOperations.swift; sourceTree = "<group>"; };
+		05F3329522F90CAD00665B5E /* AppDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataManager.swift; sourceTree = "<group>"; };
+		05F3329B22F90D7600665B5E /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		05F3329E22F90DBF00665B5E /* AppDatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabaseProvider.swift; sourceTree = "<group>"; };
+		05F332A422F90E0000665B5E /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		45AECD3219AC5C0BBE6AAA98 /* Pods_weatherTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weatherTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76030F138EB5C2822B94AC8B /* Pods-weatherTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherTest.debug.xcconfig"; path = "Target Support Files/Pods-weatherTest/Pods-weatherTest.debug.xcconfig"; sourceTree = "<group>"; };
 		A4C29473F45B18528CD6C03B /* Pods-weatherTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherTestTests.debug.xcconfig"; path = "Target Support Files/Pods-weatherTestTests/Pods-weatherTestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +99,7 @@
 		05C3F16022F9023F00E78A1A /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				05F3329422F90C9C00665B5E /* AppData */,
 				05C3F16322F9026C00E78A1A /* Location */,
 				05C3F16722F902A800E78A1A /* Permision */,
 			);
@@ -98,6 +120,16 @@
 				05C3F16822F902C300E78A1A /* PermissionManager.swift */,
 			);
 			path = Permision;
+			sourceTree = "<group>";
+		};
+		05C3F16C22F90BC700E78A1A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				05F3328A22F90C2800665B5E /* Condiguration */,
+				05F3328922F90C2400665B5E /* Provider */,
+				05F3328822F90C1E00665B5E /* Operations */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		05D4319822F8F14300A58E36 = {
@@ -124,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				05D431C722F8F3D700A58E36 /* Core */,
+				05F3329822F90D4300665B5E /* Utilities */,
 				05D431C422F8F28500A58E36 /* Resources */,
 				05D431A422F8F14300A58E36 /* AppDelegate.swift */,
 				05D431A622F8F14300A58E36 /* ViewController.swift */,
@@ -154,7 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				05D431CD22F8F41A00A58E36 /* API */,
+				05C3F16C22F90BC700E78A1A /* Database */,
 				05C3F16022F9023F00E78A1A /* Manager */,
+				05F332A122F90DE300665B5E /* Model */,
 				05D431C922F8F3FE00A58E36 /* Config */,
 			);
 			path = Core;
@@ -174,6 +209,87 @@
 			children = (
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		05F3328822F90C1E00665B5E /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				05F3328E22F90C6E00665B5E /* AppDatabaseOperation.swift */,
+				05F3329122F90C8100665B5E /* RealmOperations.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		05F3328922F90C2400665B5E /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				05F3329E22F90DBF00665B5E /* AppDatabaseProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		05F3328A22F90C2800665B5E /* Condiguration */ = {
+			isa = PBXGroup;
+			children = (
+				05F3328B22F90C4E00665B5E /* AppDatabaseConfiguration.swift */,
+			);
+			path = Condiguration;
+			sourceTree = "<group>";
+		};
+		05F3329422F90C9C00665B5E /* AppData */ = {
+			isa = PBXGroup;
+			children = (
+				05F3329522F90CAD00665B5E /* AppDataManager.swift */,
+			);
+			path = AppData;
+			sourceTree = "<group>";
+		};
+		05F3329822F90D4300665B5E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				05F3329922F90D4E00665B5E /* Extensions */,
+				05F3329A22F90D5600665B5E /* Log */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		05F3329922F90D4E00665B5E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		05F3329A22F90D5600665B5E /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				05F3329B22F90D7600665B5E /* Log.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		05F332A122F90DE300665B5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				05F332A222F90DEF00665B5E /* AppModel */,
+				05F332A322F90DF500665B5E /* RealmModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		05F332A222F90DEF00665B5E /* AppModel */ = {
+			isa = PBXGroup;
+			children = (
+				05F332A422F90E0000665B5E /* AppModel.swift */,
+			);
+			path = AppModel;
+			sourceTree = "<group>";
+		};
+		05F332A322F90DF500665B5E /* RealmModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RealmModel;
 			sourceTree = "<group>";
 		};
 		3EBE36A20134B447F468CD26 /* Pods */ = {
@@ -207,6 +323,7 @@
 				05D4319D22F8F14300A58E36 /* Sources */,
 				05D4319E22F8F14300A58E36 /* Frameworks */,
 				05D4319F22F8F14300A58E36 /* Resources */,
+				D7C4CE9FC27D6D33FC95DA2C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,6 +434,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D7C4CE9FC27D6D33FC95DA2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-weatherTest/Pods-weatherTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-weatherTest/Pods-weatherTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-weatherTest/Pods-weatherTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E0611BB9997D9E605D6B5CD1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,10 +481,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				05C3F16522F9027B00E78A1A /* LocationManager.swift in Sources */,
+				05F3328F22F90C6E00665B5E /* AppDatabaseOperation.swift in Sources */,
+				05F3329C22F90D7600665B5E /* Log.swift in Sources */,
 				05C3F16922F902C300E78A1A /* PermissionManager.swift in Sources */,
 				05D431A722F8F14300A58E36 /* ViewController.swift in Sources */,
 				05D431A522F8F14300A58E36 /* AppDelegate.swift in Sources */,
+				05F3329222F90C8100665B5E /* RealmOperations.swift in Sources */,
+				05F332A522F90E0000665B5E /* AppModel.swift in Sources */,
 				05D431CF22F8F42D00A58E36 /* Constants.swift in Sources */,
+				05F3328C22F90C4E00665B5E /* AppDatabaseConfiguration.swift in Sources */,
+				05F3329F22F90DBF00665B5E /* AppDatabaseProvider.swift in Sources */,
+				05F3329622F90CAD00665B5E /* AppDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,9 +499,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05F3329022F90C6E00665B5E /* AppDatabaseOperation.swift in Sources */,
+				05F3329322F90C8100665B5E /* RealmOperations.swift in Sources */,
+				05F332A622F90E0000665B5E /* AppModel.swift in Sources */,
+				05F3329D22F90D7600665B5E /* Log.swift in Sources */,
+				05F332A022F90DBF00665B5E /* AppDatabaseProvider.swift in Sources */,
 				05C3F16622F9027B00E78A1A /* LocationManager.swift in Sources */,
 				05D431BA22F8F14600A58E36 /* weatherTestTests.swift in Sources */,
 				05C3F16A22F902C300E78A1A /* PermissionManager.swift in Sources */,
+				05F3329722F90CAD00665B5E /* AppDataManager.swift in Sources */,
+				05F3328D22F90C4E00665B5E /* AppDatabaseConfiguration.swift in Sources */,
 				05C3F16B22F9030C00E78A1A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
