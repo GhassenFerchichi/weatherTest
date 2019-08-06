@@ -113,8 +113,8 @@ class TodayViewController: UIViewController {
             case .placeName(let name):
                 self.searchTextField?.text = name
                 self.searchTextField?.resignFirstResponder()
-            case .unAuthorized:
-                self.showUserLocationAuthorizationError()
+            case .unAuthorized(let errorMessage):
+                self.showUserLocationAuthorizationError(errorMessage)
             }
         }
     }
@@ -138,15 +138,15 @@ class TodayViewController: UIViewController {
             self.dateLabel.text = "-"
         }
     }
-    
+
     private func showError(_ errorMessage: String) {
         let alert = UIAlertController(title: "", message: errorMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.navigationController?.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
-    private func showUserLocationAuthorizationError() {
-        let alert = UIAlertController (title: "", message: "Activate ", preferredStyle: .alert)
+    private func showUserLocationAuthorizationError(_ errorMessage: String) {
+        let alert = UIAlertController (title: "", message: errorMessage, preferredStyle: .alert)
         let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
             
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
@@ -163,10 +163,8 @@ class TodayViewController: UIViewController {
 
         alert.addAction(settingsAction)
         alert.addAction(cancelAction)
-
         self.navigationController?.present(alert, animated: true, completion: nil)
     }
-    
 }
 
 // MARK: UICollectionView DataSource / Delegate
@@ -192,4 +190,11 @@ extension TodayViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return CGSize(width: kWeatherCollectionViewWidth, height: kWeatherCollectionViewHeight)
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let prevision = self.previsions[indexPath.item]
+        let vc = UIStoryboard.init(name: kStoryboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: kPrevisionDetailViewControllerIdentifier) as? PrevisionDetailViewController
+        vc?.viewModel.prevision = prevision
+        vc?.viewModel.cityName = self.searchTextField?.text ?? ""
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 }

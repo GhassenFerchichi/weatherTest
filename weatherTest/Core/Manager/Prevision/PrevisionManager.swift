@@ -109,8 +109,7 @@ class PrevisionManager: AppDataManager {
             }
             
             // Sort previsions ascending and grouping by day
-            let previsionsrrayGroupedByDays = Dictionary(grouping: previsionsForWeek){ $0.day}.flatMap({ (arg) -> Prevision in
-                let (key, value) = arg
+            let previsionsrrayGroupedByDays = Dictionary(grouping: previsionsForWeek){ $0.day}.compactMap({ (arg) -> Prevision in
                 return arg.value.first!
             }).sorted(by: { (prev1, prev2) -> Bool in
                 prev1.day.toDay() < prev2.day.toDay()

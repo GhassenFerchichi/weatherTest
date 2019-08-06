@@ -31,3 +31,11 @@ let kWeatherCollectionViewHeight = 300
 // MARK: Week list view
 
 let kWeekTableViewCellIdentifier = "WeekTableViewCellIdentifier"
+
+// MARK: Prevision detail
+
+let kPrevisionDetailViewControllerIdentifier = "PrevisionDetailViewControllerIdentifier"
+
+// MARK: City name
+
+let kCityName = "CityName"
