@@ -87,7 +87,11 @@ class TodayViewController: UIViewController {
     }
     
     @IBAction func onSearchTap(_ sender: Any) {
-        self.viewModel.onSearchAdressTap(searchTextField?.text ?? "")
+        guard let searchText = searchTextField?.text, !searchText.isEmpty else {
+            self.showError(NSLocalizedString("Please enter a city name.", comment: ""))
+            return
+        }
+        self.viewModel.onSearchAdressTap(searchText)
     }
     
     // MARK: ViewModel Subscription
