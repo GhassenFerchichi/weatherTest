@@ -42,19 +42,12 @@ class WeekListViewController: UIViewController {
         viewModel.onViewAppeard()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.setNeedsStatusBarAppearanceUpdate()
-    }
-    
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return .lightContent
-    }
-    
     // MARK: Setup user interface
     
     private func setupUI() {
         self.errorLabel.text = NSLocalizedString("Could not get Weather previsions.\nPlease try again later", comment: "")
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
     
     // MARK: ViewModel Subscription
@@ -96,5 +89,13 @@ extension WeekListViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: kWeekTableViewCellIdentifier, for: indexPath) as! WeekTableViewCell
         cell.configure(status: previsions[indexPath.row].weatherStatus, temperature: Float(previsions[indexPath.row].temperature), day: previsions[indexPath.row].day)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let prevision = self.previsions[indexPath.item]
+        let vc = UIStoryboard.init(name: kStoryboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: kPrevisionDetailViewControllerIdentifier) as? PrevisionDetailViewController
+        vc?.viewModel.prevision = prevision
+        vc?.viewModel.cityName = UserDefaults.standard.string(forKey: kCityName) ?? ""
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
 }

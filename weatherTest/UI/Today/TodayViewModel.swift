@@ -16,7 +16,7 @@ class TodayViewModel: NSObject {
         case previsions(current: Prevision, todayPrevisions: [Prevision])
         case loading
         case placeName(String)
-        case unAuthorized
+        case unAuthorized(String)
     }
     
     // MARK: Variables
@@ -26,8 +26,7 @@ class TodayViewModel: NSObject {
     // MARK: Life cycle methods
 
     func onViewAppeared() {
-        if let currentLocation = LocationManager.instance.currentLocation {
-            loadPrevisionWithLocation(currentLocation)
+        if LocationManager.instance.currentLocation != nil {
             return
         }
         
@@ -84,6 +83,10 @@ class TodayViewModel: NSObject {
     ///
     func managePrevisions(_ previsionsArray: [Prevision]) -> Prevision? {
         var prevision: Prevision? = nil
+        
+        guard !previsionsArray.isEmpty else {
+            return nil
+        }
         for i in 1 ..< previsionsArray.count - 1 {
             let nowHour = Int(Date().toHourString()) ?? -1
             let previousInputHour = Int(previsionsArray[i - 1].hour) ?? -2
@@ -118,7 +121,7 @@ class TodayViewModel: NSObject {
                     if !LocationManager.instance.didAskForUserLocation {
                         self?.publishResult?(.error)
                     } else {
-                        self?.publishResult?(.unAuthorized)
+                        self?.publishResult?(.unAuthorized(NSLocalizedString("To retrieve weather previsions for your location, turn on, device location in settings.", comment: "")))
                     }
                 }
             }
@@ -134,7 +137,10 @@ class TodayViewModel: NSObject {
     func getNamePlaceForLocation(_ location: CLLocationCoordinate2D) {
         LocationManager.instance.getLocationInformations(coordinates: location) { [weak self] place -> (Void) in
             if let city = place?.locality {
-                self?.publishResult?(.placeName(city))
+                UserDefaults.standard.set(city, forKey: kCityName)
+            } else {
+                let city = UserDefaults.standard.string(forKey: kCityName) ?? ""
+                self?.publishResult?(.placeName(city))                
             }
         }
     }
