@@ -11,6 +11,7 @@ import RealmSwift
 class Prevision: AppModel {
     
     //MARK: Variables
+    
     public var date: String = ""
     public var temperature: Double = 0
     public var humidity: String = ""
@@ -21,6 +22,15 @@ class Prevision: AppModel {
     public var isRaining: Bool = false
     public var day: String = ""
     public var hour: String = ""
+    public var weatherStatus: WeatherStatus {
+        get {
+            if (self.isRaining) {
+                return .rainy
+            } else {
+                return self.cloudCoverage > 70 ? .cloudy : .sunny
+            }
+        }
+    }
     
     //MARK: Object init
     

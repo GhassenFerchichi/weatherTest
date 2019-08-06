@@ -20,3 +20,10 @@ let apiToken = "&_auth=AxlSRQN9UnBSf1JlVyEGLwVtV2IOeAEmUy8AY1w5XiMIY1U0Dm5cOlM9W
 // MARK: Storyboard
 
 let kStoryboardName = "Main"
+
+// MARK: Weather collection
+
+let kWeatherCollectionViewNibName = "WeatherItemCollectionViewCell"
+let kWeatherCollectionViewCellIdentifier = "WeatherItemCollectionViewCell"
+let kWeatherCollectionViewWidth = 150
+let kWeatherCollectionViewHeight = 300
