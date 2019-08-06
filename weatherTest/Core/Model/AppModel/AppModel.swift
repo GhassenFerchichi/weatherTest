@@ -18,15 +18,13 @@ protocol ModelRealmable {
 public class AppModel: ModelRealmable {
     public var id: String = UUID().uuidString
     
-    
-    //MARK: Object lifecycle
+    //MARK: Object init
     
     public init() {}
     
     required public init(_ object: Object) {}
     
-    
-    // MARK: - ModelRealmable
+    //MARK: - ModelRealmable
     
     var primaryKey: String? {
         return self.id
