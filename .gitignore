@@ -1,0 +1,8 @@
+# Build generated
+build/
+DerivedData/ 
+
+# User data
+*.pbxuser
+xcuserdata/
+*xcworkspace/xcuserdata/*
